@@ -1,0 +1,58 @@
+IPK - PROJ2 - SNIFFER PAKETŮ
+Autor: Jaroslav Kvasnička
+Login: xkvasn14
+
+#####################################
+
+Seznam souborů:
+-README
+-ipk-sniffer.cpp
+manual.pdf
+Makefile
+
+#####################################
+
+Program je specializovaný na použití k sniffování paketů ze sítě.
+Uživatel si může vybrat pomocí přepínačů rozhraní na kterém chce sniffovat a jaké typy protokolů bude používat.
+
+
+Příklad spuštění:
+./ipk-sniffer -i wlo1 -t -u -n 2
+
+output:
+162.159.130.234 : 443 > 162.159.130.234 : 41422, length 244
+0x0000  17 03 03 00 c7 cb 7d 2d 67 7b 6a 9b 8c 30 20 33  ......}-g{j..0 3
+0x0010  25 70 89 78 b9 46 4f bc e6 d6 01 84 f3 57 22 4c  %p.x.FO......W"L
+0x0020  da 67 12 ee 9d 5d f6 34 2a 66 00 20 a2 d9 11 93  .g...].4*f. ....
+0x0030  1e c2 06 e1 18 31 68 53 10 51 db 29 bf be 37 c6  .....1hS.Q.)..7.
+0x0040  1c ef 08 76 57 b5 c1 14 1d fe ea 96 70 3d 29 95  ...vW.......p=).
+0x0050  c2 38 ab 58 d7 ce 04 bd 2c b4 3d ab 1a 6d a9 ad  .8.X....,.=..m..
+0x0060  e5 bb 39 93 9a 29 90 b7 b8 df 5f 4b 54 4b ed f4  ..9..)...._KTK..
+0x0070  f2 8c c6 c6 d4 26 de 8a 23 fb f8 8f 40 0e ea fa  .....&..#...@...
+0x0080  0c 26 b6 49 9c 78 12 5b 39 0e 8f b6 a5 aa 7b 8b  .&.I.x.[9.....{.
+0x0090  b4 33 c1 74 ee 75 50 50 f0 30 04 ca 58 e3 d0 08  .3.t.uPP.0..X...
+0x00a0  18 19 dc 9c 47 2d 62 16 5e e3 97 36 db 32 a3 19  ....G-b.^..6.2..
+0x00b0  eb ae a0 1a 4d 28 96 db 9f 68 57 8e a8 68 68 8e  ....M(...hW..hh.
+0x00c0  2f a8 5a f5 df 9a c5 9a 68 06 12 8c 00 00 00 00  /.Z.....h.......
+0x00d0  00 00 00 00 19 e2 85 60 89 37 15 24 36 00 00 00  .......`.7.$6...
+0x00e0  36 00 00 00 01 00 00 00 5a 00 68 00 00 00 00 00  6.......Z.h.....
+192.168.0.122 : 41422 > 192.168.0.122 : 443, length 40
+0x0000  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+0x0010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+
+
+Příklad spuštění:
+./ipk-sniffer -i wlo1 -t --icmp
+
+output:
+162.159.130.234 : 443 > 162.159.130.234 : 41422, length 157
+0x0000  17 03 03 00 70 59 0f b1 2a 75 23 4f 98 70 7a 6d  ....pY..*u#O.pzm
+0x0010  a6 c5 97 81 27 43 ab 69 71 43 1c cd 33 6b 6b ee  ....'C.iqC..3kk.
+0x0020  08 55 6f 10 20 52 ea ef bf 76 7f 52 99 08 b5 8f  .Uo. R...v.R....
+0x0030  a9 af 2b f5 31 ee 98 9f 3f 24 f2 18 8f 67 40 46  ..+.1...?$...g@F
+0x0040  4a cf 56 4d 66 4c c7 0a 20 2a 37 f7 9c a9 64 ee  J.VMfL.. *7...d.
+0x0050  d7 ae c8 94 15 71 8f 4a 9e 66 f8 85 3f 13 53 56  .....q.J.f..?.SV
+0x0060  5c 77 7f 36 57 21 27 f4 c1 66 5e e3 bc 21 27 23  \w.6W!'..f^..!'#
+0x0070  51 0e 96 49 4c 00 00 00 00 00 00 00 59 e2 85 60  Q..IL.......Y..`
+0x0080  0b c7 f0 05 36 00 00 00 36 00 00 00 01 00 00 00  ....6...6.......
+
